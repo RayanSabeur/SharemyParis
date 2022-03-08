@@ -1,0 +1,23 @@
+ #root{
+     z-index: 2;
+     position: relative;
+ }
+
+ #rootmap{
+     z-index: 1;
+     position: absolute;
+    
+     
+  
+ }
+
+ button.filtre {
+    background-image: url(../image/filtre.svg);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin: auto 10px auto 10px;
+    border: none;
+    background-color: transparent;
+  }

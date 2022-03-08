@@ -1,0 +1,423 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomeController!{% endblock %}
+ {% block header %}
+  
+
+
+            {{ encore_entry_link_tags('app') }}
+
+        
+
+    <!-- LIENS FEUILLES DE STYLES INTERNES -->
+ <link rel="stylesheet" href="/styles/style.css">
+     {% endblock  %}
+{% block body %}
+
+<div id="rootMap"></div>
+
+{% if is_granted('ROLE_GUIDE') %}
+     <section>
+    
+        <h2 class="overflow-h22">Ajouts récents</h2>
+      
+      <div class="cards_h_overflow">
+        <div class="cards_h">
+          <article class="card_h_card">
+            <div class="card_h_thumb">
+              <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+            </div>
+
+            <div class="card_h_apercu">
+    
+              <img class="card_h_notation" src="image/notation.png" alt="" />
+    <h2><b>Bar L’Echappée</b></h2>
+              <div class="card_h_catego">
+                <p class="card_h_categ1">test</p>
+                <p class="card_h_categ2">test</p>
+                <a href="z11-connecte-lieu.html"><img
+                  class="card_h_flecheverte"
+                  src="image/flecheverte.png"
+                  alt=""
+                /></a>
+              </div>
+            </div>
+          </article>
+          <article class="card_h_card">
+            <div class="card_h_thumb">
+              <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+            </div>
+
+            <div class="card_h_apercu">
+              <h2><b>Bar L’Echappée</b></h2>
+              <img class="card_h_notation" src="image/notation.png" alt="" />
+
+              <div class="card_h_catego">
+                <p class="card_h_categ1">test</p>
+                <p class="card_h_categ2">test</p>
+                <a href="z11-connecte-lieu.html">
+                  <img
+                  class="card_h_flecheverte"
+                  src="image/flecheverte.png"
+                  alt=""
+                />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card_h_card">
+            <div class="card_h_thumb">
+              <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+            </div>
+
+            <div class="card_h_apercu">
+              <h2><b>Bar L’Echappée</b></h2>
+              <img class="card_h_notation" src="image/notation.png" alt="" />
+
+              <div class="card_h_catego">
+                <p class="card_h_categ1">test</p>
+                <p class="card_h_categ2">test</p>
+                <a href="#">
+                  <img
+                  class="card_h_flecheverte"
+                  src="image/flecheverte.png"
+                  alt=""
+                />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card_h_card">
+            <div class="card_h_thumb">
+              <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+            </div>
+
+            <div class="card_h_apercu">
+              <h2><b>Bar L’Echappée</b></h2>
+              <img class="card_h_notation" src="image/notation.png" alt="" />
+
+              <div class="card_h_catego">
+                <p class="card_h_categ1">test</p>
+                <p class="card_h_categ2">test</p>
+               <a href="#">
+                <img
+                class="card_h_flecheverte"
+                src="image/flecheverte.png"
+                alt=""
+              />
+               </a>
+              </div>
+            </div>
+          </article>
+          <article class="card_h_card">
+            <div class="card_h_thumb">
+              <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+            </div>
+
+            <div class="card_h_apercu">
+              <h2><b>Bar L’Echappée</b></h2>
+              <img class="card_h_notation" src="image/notation.png" alt="" />
+
+              <div class="card_h_catego">
+                <p class="card_h_categ1">test</p>
+                <p class="card_h_categ2">test</p>
+                <a href="#">
+                  
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+ <div class="page-accueil-display">
+        <!-- DEBUT OVERFLOW AUTOUR -->
+
+    <section>
+        <h2 class="overflow-h2">Autour de vous</h2>
+        <div class="cards_autour">
+            <div class="cards_h_autour">
+
+                <article class="card_h_card">
+                    <div class="card_h_thumb">
+                        <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+                    </div>
+
+                    <div class="card_h_apercu">
+                        <h2><b>Bar L’Echappée</b></h2>
+                        <img class="card_h_notation" src="image/notation.png" alt="" />
+
+                        <div class="card_h_catego">
+                            <p class="card_h_categ1">test</p>
+                            <p class="card_h_categ2">test</p>
+                            <a href="z11-connecte-lieu.html"><img class="card_h_flecheverte" src="image/flecheverte.png" alt="" /></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card_h_card">
+                    <div class="card_h_thumb">
+                        <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+                    </div>
+
+                    <div class="card_h_apercu">
+                        <h2><b>Bar L’Echappée</b></h2>
+                        <img class="card_h_notation" src="image/notation.png" alt="" />
+
+                        <div class="card_h_catego">
+                            <p class="card_h_categ1">test</p>
+                            <p class="card_h_categ2">test</p>
+                            <a href="#"><img class="card_h_flecheverte" src="image/flecheverte.png" alt="" /></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card_h_card">
+                    <div class="card_h_thumb">
+                        <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+                    </div>
+
+                    <div class="card_h_apercu">
+                        <h2><b>Bar L’Echappée</b></h2>
+                        <img class="card_h_notation" src="image/notation.png" alt="" />
+
+                        <div class="card_h_catego">
+                            <p class="card_h_categ1">test</p>
+                            <p class="card_h_categ2">test</p>
+                            <a href="#"><img class="card_h_flecheverte" src="image/flecheverte.png" alt="" /></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card_h_card">
+                    <div class="card_h_thumb">
+                        <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+                    </div>
+
+                    <div class="card_h_apercu">
+                        <h2><b>Bar L’Echappée</b></h2>
+                        <img class="card_h_notation" src="image/notation.png" alt="" />
+
+                        <div class="card_h_catego">
+                            <p class="card_h_categ1">test</p>
+                            <p class="card_h_categ2">test</p>
+                            <a href="#"><img class="card_h_flecheverte" src="image/flecheverte.png" alt="" /></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card_h_card">
+                    <div class="card_h_thumb">
+                        <img class="card_h_img_thumb" src="image/card_img_1.jpg" alt="" />
+                    </div>
+
+                    <div class="card_h_apercu">
+                        <h2><b>Bar L’Echappée</b></h2>
+                        <img class="card_h_notation" src="image/notation.png" alt="" />
+
+                        <div class="card_h_catego">
+                            <p class="card_h_categ1">test</p>
+                            <p class="card_h_categ2">test</p>
+                            <a href="#"><img class="card_h_flecheverte" src="image/flecheverte.png" alt="" /></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+ <div class="dsh-ajout-container">
+      
+        <!-- Début ajout -->
+  
+        <h2>Ajout de lieu ou d’expérience</h2>
+  
+        <div class="dsh_encart">
+          <div class="dsh_lieu">
+            <div class="dsh_ajout">
+              <a href="{{ path("activites_new") }}"><p class="btn">LIEU</p></a>
+              <p class="dsh_descript">
+                Partagez un lieu à l’ensemble de la communauté.
+              </p>
+            </div>
+          </div>
+  
+          <div class="dsh_visite">
+            <div class="dsh_ajout">
+              <a href="{{ path("activites_new") }}"><p class="btn">VISITE</p></a>
+              <p class="dsh_descript">
+                Proposez une visite à l’ensemble de la communauté
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Fin ajout -->
+      </div>
+
+    <!-- FIN BLOC AJOUTS -->
+
+  </div>
+
+    <div class ="profil-section"> 
+        <section class="profil-info1">
+            <img class="profil-pic" src= "/uploads/brochures/{{app.user.image}}" alt="photo de profil">
+            <div class="profil-ville">
+                <h1>{{app.user.prenom}}</h1>
+                <p>Paris <br> 10ème
+                </p>
+            </div>
+        </section>
+
+        <section class="profil-info2">
+            <p>A déjà partagé 28 lieux <br>
+                A déjà proposé 3 visites</p>
+        </section>
+
+   
+        <section class="partage-recent">
+            <h2>Derniers ajouts</h2>
+
+            <!-- card 1 -->
+
+                    <!-- card 1 -->
+  {% for activite in activites %}
+    {% if app.user.id == activite.user.id %}
+            <article class="card_h_card">
+                <div class="card_h_thumb">
+                    <img class="card_h_img_thumb"  src="/uploads/brochures2/{{activite.image}}" alt="photo de profil" alt="" />
+                </div>
+
+                <div class="card_h_apercu">
+                    <h2><b style=" font-size: 20px;">{{activite.titre}}</b></h2>
+                    <img class="card_h_notation" src="/image/notation.png" alt="" />
+
+                    <div class="card_h_catego">
+                     
+                        <a href="{{ path('activites_show', {'id': activite.id}) }}"> <img class="card_h_flecheverte" src="/image/flecheverte.png" alt="" /></a>
+                    </div>
+                </div>
+            </article>
+            {% endif %}
+  {% endfor %}
+
+
+        </section>
+
+        <section class="badges">
+            <h2>Mes badges</h2>
+            <div class="badges-scroll">
+                <div class="badges-img">
+                    <img src="./image/badge-1.png" alt="badge-1">
+                    <img src="./image/badge-2.png" alt="badge-2">
+                    <img src="./image/badge-3.png" alt="badge-3">
+                    <img src="./image/badge-1.png" alt="badge-4">
+                    <img src="./image/badge-2.png" alt="badge-5">
+                    <img src="./image/badge-3.png" alt="badge-6">
+                </div>
+            </div>
+        </section>
+    </div>
+   
+  {% else %}
+ 
+
+  <div class="connexion-section" > 
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+  <h2>Connexion</h2>
+   <form method="post">
+    <label for="inputEmail" >Email</label>
+    <input type="email" value="{{ last_username }}" name="email"  id="inputEmail" class="  input-2-col" autocomplete="email" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class=" input-2-col" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+
+           </div>
+             <p><button class="btn  btn-lg btn-primary" type="submit">Me connecter</button></p>
+    </form>
+  <p class="connexion-section-mdp-oublie"><a href="#">Mot de passe oublié ?</a></p>
+      
+
+        <p class="connexion-section-alternative">
+            Ou connexion avec :
+        </p>
+        <button class="btn-facebook">
+            <img src="./image/facebook.png" alt="icone Facebook">
+            Facebook
+        </button>
+        <button class="btn-google">
+            <img src="./image/google.png" alt="icone Google">
+            Google
+        </button>
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+
+   <p class="p2">Pas encore inscrit ? <a href="#" id="myBtn" class="p2">Rejoignez-nous !</a></p>
+
+
+
+
+        <p><a class="section-connexion-mentions-legales" href="#">Mentions légales</a></p>
+</div>
+
+    
+    <div class="accueil-texte-mobile">
+      <h2>Share my Paris</h2>
+      <p>Sharemy PARIS est une communauté où les locaux et visiteurs se retrouve pour échanger et trouver des bons plans. 
+        Que tu souhaites profiter de Paname ou partager tes bon plans, tu seras toujours le bienvenue!</p>
+    </div>
+
+          {% endif %}
+      
+{% endblock %}
+{% block javascripts %}
+
+    {{ parent()}}
+      <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  ></script>
+   <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+  ></script>
+  
+{% endblock %}

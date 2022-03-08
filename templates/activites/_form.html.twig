@@ -1,0 +1,100 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="ajout-bon-plan">
+
+        <h2>Ajout de bon plan</h2>
+       
+
+     {{ form_start(form) }}
+{{ form_widget(form._token) }}
+            <!-- Première colonne -->
+
+                <div class="ajoutBP-cols">
+                <div class="ajoutBP-col1">
+                    <label for="ajoutBP-titre">Titre de votre bon plan</label>
+                 
+            {{ form_widget(form.titre, {'attr': {'placeholder': 'titre', 'class': 'input-2-col', 'id': 'ajoutBP-titre'}}) }}
+
+
+
+
+
+
+
+
+                    <label for="ajoutBP-description">Description de votre bon plan</label>
+                      {{ form_widget(form.description, {'attr': {'placeholder': 'description', 'class': 'input-2-col', 'id': 'ajoutBP-description'}})   }}
+
+
+                    <label for="ajoutBP-image">Image</label>
+               
+                     {{ form_widget(form.image, {'attr': {'placeholder': 'image', 'class': 'input-2-col','id': 'ajoutBP-image'}})  }}
+
+                </div>
+
+                <!-- Fin première colonne -->
+
+                <div class="ajoutBP-col2">
+
+                    <label for="ajoutBP-adresse">Adresse de votre bon plan</label>
+                    {{ form_widget(form.adresse, {'attr': {'placeholder': 'adresse', 'class': 'input-2-col','id': 'ajoutBP-adresse'}})  }}
+                    <p>Catégories</p>
+
+                    <div class="ajout-categories">
+
+                        <div class="categories-col6">
+                            {% for categorie in form.categories %}
+                                {{ form_widget(categorie)  }}{{ form_label(categorie)  }}
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+
+
+                    <p>Public</p>
+                    <div class="ajout-categories">
+
+                        <div class="categories-col1">
+                            
+                        </div>
+                            {{ form_widget(form.public, {'attr': {'placeholder': 'groupe ou famille ?', 'class': ''}}) }}
+                        </div>
+                    </div>
+                
+                </div>
+      <button  ="btn">{{ button_label|default('Save') }}</button>
+   
+    </div>
+
+     
+   {{ form_end(form, {'render_rest':false}) }}
+    </div>
+

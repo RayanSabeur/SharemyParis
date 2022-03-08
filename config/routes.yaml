@@ -1,0 +1,31 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+
+login:
+    path: login/
+    controller: App\Controller\SecurityController::login
+
+registration:
+    path: register/
+    controller: App\Controller\SecurityController::register
+
+new:
+    path: activites/
+    controller: App\Controller\ActivitesController::new
+
+
+profil:
+    path: profile/
+    controller: App\Controller\ProfileController::userprofil
+
+
+
+searchactivites:
+    path: activites/api/search/{query}
+    controller: App\Controller\ActivitesController::search
+
+
+searchactivitesquery:
+    path: activites/api/searchquery
+    controller: App\Controller\ActivitesController::searchquery

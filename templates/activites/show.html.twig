@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activites{% endblock %}
+
+{% block body %}
+   <div class="bloc-produit">
+ <link rel="stylesheet" href="../styles/style.css">
+    <div class="produit-entete">
+      <img  src="/uploads/brochures2/{{activite.image}}" alt="montmartre" class="bloc-produit-img">
+      <a href="{{ path("activites_list") }}"><img src="/image/fleche-retour.png" alt="fleche-retour" class="bloc-produit-retour"></a>
+      <a href="#"><img src="/image/fav.png" class="bloc-produit-fav"></a>
+    </div>
+
+    <div class="bloc-produit-container">
+      <div class="produit-titre-tags">
+          <div class="produit-titre-lieu">
+            <h2>{{activite.titre}}</h2>
+            <p class="produit-lieu">Mardi 8 juin de 10h00 à 12h00</p>
+          </div>
+            
+        <h3 class="produit-tags">Tags</h3>
+        <h3 class="produit-tags">Tags</h3>
+        <h3 class="produit-tags">Tags</h3>
+       
+     {% if is_granted('ROLE_USER') %}
+        <div class="produit-contacter">
+
+            <img src="/image/contacter.png" alt="Contacter le guide">
+            <p class="produit-p-contact">Contacter le guide</p>
+        </div>
+        {% endif %}
+      </div>
+
+
+      <div class="produit-stars-avis">
+        <div class="bloc-produit-stars">
+          <img src="/image/etoile-orange-2.png" alt="étoile orange avis positif">
+          <img src="/image/etoile-orange-2.png" alt="étoile orange avis positif">
+          <img src="/image/etoile-orange-2.png" alt="étoile orange avis positif">
+          <img src="/image/etoile-grise-2.png" alt="étoile grisée">
+          <img src="/image/etoile-grise-2.png" alt="étoile grisée">
+        </div>
+        <div class="bloc-produit-avis">
+          <h3>(54 avis)</h3>
+        </div>
+        <a href="#"><img src="/image/fleche-deroulement.png" alt="dérouler" class="produit-fleche-derouler"></a>
+      </div>
+
+      <h3>Description</h3>
+      <p>{{activite.description}}</p>
+
+      <div class="produit-infos">
+        <h3>Informations</h3>
+        <p>{{activite.adresse}}
+           </p>
+      </div>
+
+      <div class="produit-local">
+        <h3>À propos du local</h3>
+        <div class="produit-local-float">
+        <img src="/uploads/brochures/{{activite.user.image}}" alt="photo de profil">
+        <p></p>
+      </div>
+      </div>
+
+
+      <div class="produit-ajout-avis">
+        <p>Vous avez vécu cette expérience ?</p>
+<!-- --------------------------------pour les devs : pop-up "y-depotavis.html"-------------------------------------------------------->
+        <button class="btn">Ajouter un avis</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FIN BLOC PRODUIT -->
+
+  <!-- DEBUT SECTION PROFILE -->
+
+  <div class="profil-section">
+    <section class="profil-info1">
+      <img class="profil-pic" src="/uploads/brochures/{{app.user.image}}" alt="photo de profil">
+      <div class="profil-ville">
+        <h1>{{app.user.prenom}}</h1>
+        <p>Paris
+        </p>
+      </div>
+    </section>
+
+    <section class="profil-info2">
+      <p>A déjà partagé 28 lieux <br>
+        A déjà proposé 3 visites</p>
+    </section>
+
+    <section class="partage-recent">
+      <h2>Derniers ajouts</h2>
+
+     
+            <!-- card 1 -->
+  {% for activite in activites %}
+    {% if app.user.id == activite.user.id %}
+            <article class="card_h_card">
+                <div class="card_h_thumb">
+                    <img class="card_h_img_thumb"  src="/uploads/brochures2/{{activite.image}}" alt="photo de profil" alt="" />
+                </div>
+
+                <div class="card_h_apercu">
+                    <h2><b style=" font-size: 20px;">{{activite.titre}}</b></h2>
+                    <img class="card_h_notation" src="/image/notation.png" alt="" />
+
+                    <div class="card_h_catego">
+                     
+                        <a href="{{ path('activites_show', {'id': activite.id}) }}"> <img class="card_h_flecheverte" src="/image/flecheverte.png" alt="" /></a>
+                    </div>
+                </div>
+            </article>
+            {% endif %}
+  {% endfor %}
+          
+    </section>
+
+    <section class="badges">
+      <h2>Mes badges</h2>
+      <div class="badges-scroll">
+        <div class="badges-img">
+          <img src="/image/badge-1.png" alt="badge-1">
+          <img src="/image/badge-2.png" alt="badge-2">
+          <img src="/image/badge-3.png" alt="badge-3">
+          <img src="/image/badge-1.png" alt="badge-4">
+          <img src="/image/badge-2.png" alt="badge-5">
+          <img src="/image/badge-3.png" alt="badge-6">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FIN SECTION PROFILE -->
+
+    <a href="{{ path('activites_index') }}">back to list</a>
+
+    <a href="{{ path('activites_edit', {'id': activite.id}) }}">edit</a>
+
+   
+{% endblock %}
